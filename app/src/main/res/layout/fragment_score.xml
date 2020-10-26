@@ -6,14 +6,16 @@
 	>
 	<data>
 		<variable
+			name="fragment"
+			type="id.ac.polinema.skor.fragments.ScoreFragment" />
+
+		<variable
 			name="homeGoalScorerList"
 			type="java.util.List" />
+
 		<variable
 			name="awayGoalScorerList"
 			type="java.util.List" />
-		<variable
-			name="fragment"
-			type="id.ac.polinema.skor.fragments.ScoreFragment" />
 	</data>
 
 	<androidx.constraintlayout.widget.ConstraintLayout
@@ -51,7 +53,7 @@
 			android:layout_marginEnd="8dp"
 			android:layout_marginBottom="16dp"
 			android:text="Add Score Home"
-			android:onClick="@{(v)->fragment.onAddHomeClick(v)}"
+            android:onClick="@{(v) -> fragment.onAddHomeClick(v)}"
 			app:layout_constraintBottom_toTopOf="@+id/guideline"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" />
@@ -64,7 +66,7 @@
 			android:layout_marginEnd="8dp"
 			android:layout_marginBottom="16dp"
 			android:text="Add Score Away"
-			android:onClick="@{(v)->fragment.onAddAwayClick(v)}"
+			android:onClick="@{(v) -> fragment.onAddAwayClick(v)}"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0.0"
@@ -79,23 +81,21 @@
 
 		<TextView
 			android:id="@+id/text_home_score"
-			android:layout_width="197dp"
-			android:layout_height="2dp"
-			android:text="@{String.valueOf(homeGoalScorerList.size())}"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
 			android:textSize="64sp"
+            android:text="@{String.valueOf(homeGoalScorerList.size())}"
 			app:layout_constraintBottom_toTopOf="@+id/guideline"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintHorizontal_bias="0.497"
 			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintVertical_bias="0.425" />
+			app:layout_constraintTop_toTopOf="parent" />
 
 		<TextView
 			android:id="@+id/text_away_score"
-			android:layout_width="99dp"
-			android:layout_height="16dp"
-			android:text="@{String.valueOf(awayGoalScorerList.size())}"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
 			android:textSize="64sp"
+            android:text="@{String.valueOf(awayGoalScorerList.size())}"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
@@ -103,20 +103,20 @@
 
 		<TextView
 			android:id="@+id/text_home_scorer"
-			android:layout_width="99dp"
-			android:layout_height="34dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
 			android:layout_marginBottom="8dp"
-			android:text="@{fragment.getHomeScorer()}"
+            android:text="@{fragment.homeScorer}"
 			app:layout_constraintBottom_toTopOf="@+id/button_add_home"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" />
 
 		<TextView
 			android:id="@+id/text_away_scorer"
-			android:layout_width="112dp"
-			android:layout_height="46dp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
 			android:layout_marginBottom="8dp"
-			android:text="@{fragment.getAwayScorer()}"
+            android:text="@{fragment.awayScorer}"
 			app:layout_constraintBottom_toTopOf="@+id/button_add_away"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" />
